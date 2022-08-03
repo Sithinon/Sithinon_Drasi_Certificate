@@ -1,0 +1,234 @@
+from tkinter import*
+import tkinter.messagebox
+GG = Tk()
+GG.title("โปรแกรมคำนวณหาพื้นที่รูปเลขาคณิต");
+GG.geometry('950x800');
+GG.option_add("*Font","K2D 15")
+text2=Label(text="  ***** โปรแกรมคำนวณหาพื้นที่รูปเรขาคณิต *****",fg="black",bg="#89CFEF").grid(row=1,column=2,padx=6,pady=20)
+GG.configure(background="#222222")
+GG.option_add("*Font","K2D 12")
+
+myMenu =Menu()
+GG.config(menu=myMenu)
+menuitem = Menu()
+
+def pp():
+    newwindow = Tk()
+    newwindow.title("หาพื้นที่รูปสี่เหลี่ยมผืนผ้า")
+    newwindow.option_add("*Font","K2D 16")
+    newwindow.geometry('700x1200');
+    newwindow.configure(background="#6DBA3C")
+    #คำสั่งใส่ข้อความ
+    Label(newwindow,text='พื้นที่ของรูปสี่เหลี่ยมผืนผ้า',bg="#6DBA3C").grid(row=1,column=1,padx=6,pady=20)
+    #ข้อความและกล่องรับข้อมูล
+    number1 = IntVar()
+    Label(newwindow,text='กรุณาใส่ความกว้าง',bg="#6DBA3C").grid(row=2,column=0,padx=5,pady=20)
+    box1=Entry(newwindow,width=20,textvariable=number1)
+    box1.grid(row=2,column=1,padx=5,pady=20)
+    number2 = IntVar()
+    Label(newwindow,text='กรุณาใส่ความยาว',bg="#6DBA3C").grid(row=3,column=0,padx=5,pady=20)
+    box2=Entry(newwindow,width=20,textvariable=number2)
+    box2.grid(row=3,column=1,padx=5,pady=20)
+    Label(newwindow,text='แสดงผลลัพธ์',bg="#6DBA3C").grid(row=4,column=0,padx=5,pady=20)
+    #การสร้างฟังชั่นการทำงาน
+    def God (event):
+        x = float(box1.get())
+        y = float(box2.get())
+        z = x*y
+        Label(newwindow,text=z,bg="#6DBA3C").grid(row=4,column=1,padx=5,pady=20)
+    def deletedata():
+        box1.delete(0,END)
+        box2.delete(0,END)
+        Label(newwindow,text="ค่าว่าง",bg="#6DBA3C").grid(row=4,column=1,padx=5,pady=20)
+    #สร้างปุ่มคำนวน
+    btn=Button(newwindow,text="คำนวณ",bg="red",command=God).grid(row=5,column=0,padx=5,pady = 20 )
+    #สร้างปุ่มลบข้อมูล
+    btn=Button(newwindow,text="ลบข้อมูล",bg="red",command=deletedata).grid(row=6,column=0,padx=5,pady=20)
+    newwindow.mainloop
+    
+def aa():
+    newwindow = Tk()
+    newwindow.title("หาพื้นที่รูปสามเหลี่ยม")
+    newwindow.option_add("*Font","K2D 16")
+    newwindow.geometry('700x1200');
+    newwindow.configure(background="#6DBA3C")
+    #คำสั่งใส่ข้อความ
+    Label(newwindow,text='พื้นที่ของรูปสามเหลี่ยม',bg="#6DBA3C").grid(row=1,column=1,padx=6,pady=20)
+    #ข้อความและกล่องรับข้อมูล
+    number1 = IntVar()
+    Label(newwindow,text='กรุณาใส่ความยาวฐาน',bg="#6DBA3C").grid(row=2,column=0,padx=5,pady=20)
+    box1=Entry(newwindow,width=20,textvariable=number1)
+    box1.grid(row=2,column=1,padx=5,pady=20)
+    number2 = IntVar()
+    Label(newwindow,text='กรุณาใส่ความสูง',bg="#6DBA3C").grid(row=3,column=0,padx=5,pady=20)
+    box2=Entry(newwindow,width=20,textvariable=number2)
+    box2.grid(row=3,column=1,padx=5,pady=20)
+    Label(newwindow,text='แสดงผลลัพธ์',bg="#6DBA3C").grid(row=4,column=0,padx=5,pady=20)
+    #การสร้างฟังชั่นการทำงาน
+    def God ():
+        x = float(box1.get())
+        y = float(box2.get())
+        z = 1/2*x*y
+        Label(newwindow,text=z,bg="#6DBA3C").grid(row=4,column=1,padx=5,pady=20)
+    def deletedata():
+        box1.delete(0,END)
+        box2.delete(0,END)
+        Label(newwindow,text="ค่าว่าง",bg="#6DBA3C").grid(row=4,column=1,padx=5,pady=20)
+    #สร้างปุ่มคำนวน
+    btn=Button(newwindow,text="คำนวณ",bg="red",command=God).grid(row=5,column=0,padx=5,pady = 20 )
+    #สร้างปุ่มลบข้อมูล
+    btn=Button(newwindow,text="ลบข้อมูล",bg="red",command=deletedata).grid(row=6,column=0,padx=5,pady=20)
+    newwindow.mainloop
+def bb():
+    newwindow = Tk()
+    newwindow.title("หาพื้นที่รูปวงกลม")
+    newwindow.option_add("*Font","K2D 16")
+    newwindow.geometry('700x1200');
+    newwindow.configure(background="#6DBA3C")
+    #คำสั่งใส่ข้อความ
+    Label(newwindow,text='พื้นที่ของรูปวงกลม',bg="#6DBA3C").grid(row=1,column=1,padx=6,pady=20)
+    #ข้อความและกล่องรับข้อมูล
+    number1 = IntVar()
+    Label(newwindow,text='กรุณาใส่ความยาวของรัศมี',bg="#6DBA3C").grid(row=2,column=0,padx=5,pady=20)
+    box1=Entry(newwindow,width=20,textvariable=number1)
+    box1.grid(row=2,column=1,padx=5,pady=20)
+    number2 = IntVar()
+    Label(newwindow,text='แสดงผลลัพธ์',bg="#6DBA3C").grid(row=4,column=0,padx=5,pady=20)
+    #การสร้างฟังชั่นการทำงาน
+    def God ():
+        r = float(box1.get())
+        z = 3.14*r*r
+        Label(newwindow,text=z,bg="#6DBA3C").grid(row=4,column=1,padx=5,pady=20)
+    def deletedata():
+        box1.delete(0,END)
+        Label(newwindow,text="ค่าว่าง",bg="#6DBA3C").grid(row=4,column=1,padx=5,pady=20)
+    #สร้างปุ่มคำนวน
+    btn=Button(newwindow,text="คำนวณ",bg="red",command=God).grid(row=5,column=0,padx=5,pady = 20 )
+    #สร้างปุ่มลบข้อมูล
+    btn=Button(newwindow,text="ลบข้อมูล",bg="red",command=deletedata).grid(row=6,column=0,padx=5,pady=20)
+    newwindow.mainloop
+def cc():
+    newwindow = Tk()
+    newwindow.title("หาพื้นที่รูปสี่เหลี่ยมจัตุรัส")
+    newwindow.option_add("*Font","K2D 16")
+    newwindow.geometry('700x1200');
+    newwindow.configure(background="#6DBA3C")
+    #คำสั่งใส่ข้อความ
+    Label(newwindow,text='พื้นที่ของรูปสี่เหลี่ยมจัตุรัส',bg="#6DBA3C").grid(row=1,column=1,padx=6,pady=20)
+    #ข้อความและกล่องรับข้อมูล
+    number1 = IntVar()
+    Label(newwindow,text='กรุณาใส่ความยาวด้าน',bg="#6DBA3C").grid(row=2,column=0,padx=5,pady=20)
+    box1=Entry(newwindow,width=20,textvariable=number1)
+    box1.grid(row=2,column=1,padx=5,pady=20)
+    number2 = IntVar()
+    Label(newwindow,text='กรุณาใส่ความยาวด้าน',bg="#6DBA3C").grid(row=3,column=0,padx=5,pady=20)
+    box2=Entry(newwindow,width=20,textvariable=number2)
+    box2.grid(row=3,column=1,padx=5,pady=20)
+    Label(newwindow,text='แสดงผลลัพธ์',bg="#6DBA3C").grid(row=4,column=0,padx=5,pady=20)
+    #การสร้างฟังชั่นการทำงาน
+    def God ():
+        x = float(box1.get())
+        y = float(box2.get())
+        z = x*y
+        Label(newwindow,text=z,bg="#6DBA3C").grid(row=4,column=1,padx=5,pady=20)
+    def deletedata():
+        box1.delete(0,END)
+        box2.delete(0,END)
+        Label(newwindow,text="ค่าว่าง",bg="#6DBA3C").grid(row=4,column=1,padx=5,pady=20)
+    #สร้างปุ่มคำนวน
+    btn=Button(newwindow,text="คำนวณ",bg="red",command=God).grid(row=5,column=0,padx=5,pady = 20 )
+    #สร้างปุ่มลบข้อมูล
+    btn=Button(newwindow,text="ลบข้อมูล",bg="red",command=deletedata).grid(row=6,column=0,padx=5,pady=20)
+    newwindow.mainloop
+def dd():
+    newwindow = Tk()
+    newwindow.title("หาพื้นที่รูปสี่เหลี่ยมด้านขนาน")
+    newwindow.option_add("*Font","K2D 16")
+    newwindow.geometry('700x1200');
+    newwindow.configure(background="#6DBA3C")
+    #คำสั่งใส่ข้อความ
+    Label(newwindow,text='พื้นที่ของรูปสี่เหลี่ยมด้านขนาน',bg="#6DBA3C").grid(row=1,column=1,padx=6,pady=20)
+    #ข้อความและกล่องรับข้อมูล
+    number1 = IntVar()
+    Label(newwindow,text='กรุณาใส่ความยาวฐาน',bg="#6DBA3C").grid(row=2,column=0,padx=5,pady=20)
+    box1=Entry(newwindow,width=20,textvariable=number1)
+    box1.grid(row=2,column=1,padx=5,pady=20)
+    number2 = IntVar()
+    Label(newwindow,text='กรุณาใส่ความสูง',bg="#6DBA3C").grid(row=3,column=0,padx=5,pady=20)
+    box2=Entry(newwindow,width=20,textvariable=number2)
+    box2.grid(row=3,column=1,padx=5,pady=20)
+    Label(newwindow,text='แสดงผลลัพธ์',bg="#6DBA3C").grid(row=4,column=0,padx=5,pady=20)
+    #การสร้างฟังชั่นการทำงาน
+    def God (event):
+        x = float(box1.get())
+        y = float(box2.get())
+        z = x*y
+        Label(newwindow,text=z,bg="#6DBA3C").grid(row=4,column=1,padx=5,pady=20)
+    def deletedata():
+        box1.delete(0,END)
+        box2.delete(0,END)
+        Label(newwindow,text="ค่าว่าง",bg="#6DBA3C").grid(row=4,column=1,padx=5,pady=20)
+    #สร้างปุ่มคำนวน
+    btn=Button(newwindow,text="คำนวณ",bg="red",command=God).grid(row=5,column=0,padx=5,pady = 20 )
+    #สร้างปุ่มลบข้อมูล
+    btn=Button(newwindow,text="ลบข้อมูล",bg="red",command=deletedata).grid(row=6,column=0,padx=5,pady=20)
+    newwindow.mainloop
+def hh():
+    newwindow = Tk()
+    newwindow.title("หาพื้นที่รูปสี่เหลี่ยมขนมเปียกปูน")
+    newwindow.option_add("*Font","K2D 16")
+    newwindow.geometry('700x1200');
+    newwindow.configure(background="#6DBA3C")
+    #คำสั่งใส่ข้อความ
+    Label(newwindow,text='พื้นที่ของรูปสี่เหลี่ยมขนมเปียกปูน',bg="#6DBA3C").grid(row=1,column=1,padx=6,pady=20)
+    #ข้อความและกล่องรับข้อมูล
+    number1 = IntVar()
+    Label(newwindow,text='กรุณาใส่ความยาวเส้นทแยงมุม',bg="#6DBA3C").grid(row=2,column=0,padx=5,pady=20)
+    box1=Entry(newwindow,width=20,textvariable=number1)
+    box1.grid(row=2,column=1,padx=5,pady=20)
+    number2 = IntVar()
+    Label(newwindow,text='กรุณาใส่ความยาวเส้นทแยงมุม',bg="#6DBA3C").grid(row=3,column=0,padx=5,pady=20)
+    box2=Entry(newwindow,width=20,textvariable=number2)
+    box2.grid(row=3,column=1,padx=5,pady=20)
+    Label(newwindow,text='แสดงผลลัพธ์',bg="#6DBA3C").grid(row=4,column=0,padx=5,pady=20)
+    #การสร้างฟังชั่นการทำงาน
+    def God (event):
+        x = float(box1.get())
+        y = float(box2.get())
+        z = 1/2*x*y
+        Label(newwindow,text=z,bg="#6DBA3C").grid(row=4,column=1,padx=5,pady=20)
+    def deletedata():
+        box1.delete(0,END)
+        box2.delete(0,END)
+        Label(newwindow,text="ค่าว่าง",bg="#6DBA3C").grid(row=4,column=1,padx=5,pady=20)
+    #สร้างปุ่มคำนวน
+    btn=Button(newwindow,text="คำนวณ",bg="red",command=God).grid(row=5,column=0,padx=5,pady = 20 )
+    #สร้างปุ่มลบข้อมูล
+    btn=Button(newwindow,text="ลบข้อมูล",bg="red",command=deletedata).grid(row=6,column=0,padx=5,pady=20)
+    newwindow.mainloop    
+def boxshow():
+    tkinter.messagebox.showinfo("กด","ไม่มีอะไร\n")
+myMenu.add_cascade(label="เกเรมาก",command = boxshow)
+menuitem.add_command(label="หาพื้นที่รูปสี่เหลี่ยมผืนผ้า",command = pp)
+menuitem.add_command(label="หาพื้นที่สามเหลี่ยม",command = aa)
+menuitem.add_command(label="หาพื้นที่รูปวงกลม",command = bb)
+menuitem.add_command(label="หาพื้นที่รูปสี่เหลี่ยมจัตุรัส",command = cc)
+menuitem.add_command(label="หาพื้นที่รูปสี่เหลี่ยมด้านขนาน",command = dd)
+menuitem.add_command(label="หาพื้นที่รูปสี่เหลี่ยมขนมเปียกปูน",command = hh)
+myMenu.add_cascade(label="หมวดหมู่", menu=menuitem )
+def boxshow():
+    tkinter.messagebox.showinfo("คนทำ","ไม่ทำ\n")
+myMenu.add_cascade(label="ขอบคุณครับ",command = boxshow)
+photo = PhotoImage(file="11.png")
+btn=Button(GG,image = photo,bg="red",command=pp).grid(row=5,column=1,padx=5,pady = 20 )
+photo1 = PhotoImage(file="2.png")
+btn=Button(GG,image = photo1,bg="red",command=aa).grid(row=5,column=2,padx=5,pady = 20 )
+photo2 = PhotoImage(file="3.png")
+btn=Button(GG,image = photo2,bg="red",command=bb).grid(row=5,column=3,padx=5,pady = 20 )
+photo3 = PhotoImage(file="1.png")
+btn=Button(GG,image = photo3,bg="red",command=cc).grid(row=6,column=1,padx=5,pady = 20 )
+photo4 = PhotoImage(file="5.png")
+btn=Button(GG,image = photo4,bg="red",command=dd).grid(row=6,column=2,padx=5,pady = 20 )
+photo5 = PhotoImage(file="6.png")
+btn=Button(GG,image = photo5,bg="red",command=hh).grid(row=6,column=3,padx=5,pady = 20 )
+GG.mainloop()

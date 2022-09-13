@@ -159,7 +159,7 @@ def dd():
     box2.grid(row=3,column=1,padx=5,pady=20)
     Label(newwindow,text='แสดงผลลัพธ์',bg="#6DBA3C").grid(row=4,column=0,padx=5,pady=20)
     #การสร้างฟังชั่นการทำงาน
-    def God (event):
+    def God ():
         x = float(box1.get())
         y = float(box2.get())
         z = x*y
@@ -192,7 +192,7 @@ def hh():
     box2.grid(row=3,column=1,padx=5,pady=20)
     Label(newwindow,text='แสดงผลลัพธ์',bg="#6DBA3C").grid(row=4,column=0,padx=5,pady=20)
     #การสร้างฟังชั่นการทำงาน
-    def God (event):
+    def God ():
         x = float(box1.get())
         y = float(box2.get())
         z = 1/2*x*y
